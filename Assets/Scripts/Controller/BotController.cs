@@ -11,7 +11,7 @@ using Utilities;
 //i'm fine
 namespace Controller
 {
-    //Bye Bye!
+    //Hello
     public class BotController
     {
         private readonly TimeUtil _timeUtil;
@@ -75,3 +75,4 @@ namespace Controller
         }
     }
 }
+
