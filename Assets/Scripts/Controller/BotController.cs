@@ -11,6 +11,7 @@ using Utilities;
 //i'm fine
 namespace Controller
 {
+    //Bye Bye!
     public class BotController
     {
         private readonly TimeUtil _timeUtil;
