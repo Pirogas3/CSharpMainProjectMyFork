@@ -36,7 +36,6 @@ namespace UnitBrains.Player
                     }
                 }
                 IncreaseTemperature();
-                Debug.Log(GetTemperature());
             }
             ///////////////////////////////////////
         }
@@ -52,10 +51,19 @@ namespace UnitBrains.Player
             // Homework 1.4 (1st block, 4rd module)
             ///////////////////////////////////////
             List<Vector2Int> result = GetReachableTargets();
-            while (result.Count > 1)
+            if (result.Count == 0) return result;
+            float MinRangeToBase = float.MaxValue;
+            Vector2Int NearestTarget = result[0];
+            foreach (var target in result)
             {
-                result.RemoveAt(result.Count - 1);
+                if (DistanceToOwnBase(target) < MinRangeToBase)
+                {
+                    MinRangeToBase = DistanceToOwnBase(target);
+                    NearestTarget = target;
+                }
             }
+            result.Clear();
+            result.Add(NearestTarget);
             return result;
             ///////////////////////////////////////
         }
